@@ -9,6 +9,68 @@ body {
   font-family: var(--font-family);
 }
 
+nav.navbar {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+}
+nav.navbar ul {
+  display: flex;
+  list-style-type: none;
+  align-items: baseline;
+}
+nav.navbar ul li {
+  position: relative;
+}
+nav.navbar ul li .dropdown a {
+  color: green;
+}
+nav.navbar ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  left: 0;
+  display: none;
+  padding-inline-start: 0px;
+}
+nav.navbar ul li .title {
+  font-weight: normal;
+  font-weight: normal;
+  font-size: 2em;
+  letter-spacing: 0.15em;
+  margin-bottom: 0;
+  padding: 0 1em;
+}
+nav.navbar ul li a {
+  display: block;
+  color: red;
+  padding: 0.25em 1em;
+  text-decoration: none;
+  transition: 300ms;
+}
+nav.navbar ul li a:hover {
+  background-color: yellow;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+nav.navbar ul li a:active {
+  background-color: orange;
+}
+nav.navbar ul li:hover > ul, nav.navbar ul a:hover {
+  background-color: orange;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.buttons-section {
+  padding: 20px 0px;
+}
+
 button {
   padding: 0.5em 0.75em;
   background-color: var(--bg-color);
@@ -36,6 +98,10 @@ pre {
   font-size: 10px;
   background-color: beige;
   padding: 10px 10px 0px 0px;
+}
+
+.to-the-end {
+  height: 1600px;
 }
 
 /*# sourceMappingURL=styles.css.map */
