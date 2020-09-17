@@ -2,15 +2,25 @@
   --base-font-size: 16px;
   --bg-color: white;
   --fg-color: cornflowerblue;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family: "Didact Gothic", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
   font-family: var(--font-family);
 }
 
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+nav.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 nav.navbar {
-  background-color: blue;
+  background-color: #FFC93C;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -20,6 +30,7 @@ nav.navbar ul {
   display: flex;
   list-style-type: none;
   align-items: baseline;
+  padding-inline-start: 0px;
 }
 nav.navbar ul li {
   position: relative;
@@ -46,7 +57,7 @@ nav.navbar ul li .title {
 }
 nav.navbar ul li a {
   display: block;
-  color: red;
+  color: black;
   padding: 0.25em 1em;
   text-decoration: none;
   transition: 300ms;
@@ -102,6 +113,56 @@ pre {
 
 .to-the-end {
   height: 1600px;
+}
+
+.selectors > label {
+  margin: 1.5em 1em;
+  display: block;
+}
+
+.checkbox > span {
+  padding: 0.5em 0 0.5em 5.5em;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox > input[type=checkbox] + span::before {
+  content: "";
+  display: inline-block;
+  border: 2px solid blue;
+  border-radius: 0;
+  width: 3.5em;
+  height: 1.5em;
+  margin: 0 0.5em 0 0;
+  position: absolute;
+  left: 0.25em;
+  top: 0.25em;
+  background-color: orange;
+  transition: 400ms;
+}
+
+.checkbox > input[type=checkbox] + span::after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: blue;
+  border: 2px solid red;
+  border-radius: 50%;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  transition: 400ms;
+}
+
+.checkbox > input[type=checkbox]:checked + span::before {
+  background-color: yellow;
+}
+
+.checkbox > input[type=checkbox]:checked + span::after {
+  left: 2.5em;
+  background-color: green;
+  border-color: green;
 }
 
 /*# sourceMappingURL=styles.css.map */

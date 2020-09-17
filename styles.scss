@@ -1,5 +1,5 @@
 $base-font: 16px;
-$font-group: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-group: 'Didact Gothic', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $forground-color: cornflowerblue;
 $background-color: white;
 
@@ -14,17 +14,32 @@ body {
     font-family: var(--font-family);
 }
 
-nav.navbar {
-    background-color: blue;
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+nav.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+}
+nav.navbar{
+    background-color: #FFC93C;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
     align-items: baseline;
     
+
+
+
     ul {
         display: flex;
         list-style-type: none;
         align-items: baseline;
+        padding-inline-start: 0px;
 
         li {
             position: relative;
@@ -64,7 +79,7 @@ nav.navbar {
             a {
 
                 display: block;
-                color: red;
+                color: black;
                 padding: 0.25em 1em;
                 text-decoration: none;
                 transition: 300ms;
@@ -92,6 +107,7 @@ nav.navbar {
         }
     }
 }
+
 
 
 
@@ -133,3 +149,64 @@ pre {
 .to-the-end{
     height: 1600px;
 }
+
+.selectors > label {
+    margin: 1.5em 1em;
+    display: block;
+}
+
+// selector styling
+.checkbox > span {
+    padding: .5em 0 .5em 5.5em;
+    // background-color: blueviolet;
+    align-items: center;
+    position: relative;
+}
+
+// this is the box
+.checkbox > input[type=checkbox] + span::before {
+    content: '';
+    display: inline-block;
+    border: 2px solid blue;
+    border-radius: 0;
+    width: 3.5em;
+    height: 1.5em;
+    margin: 0 0.5em 0 0;
+    position: absolute;
+    left: 0.25em;
+    top: 0.25em;
+    background-color: orange;
+    transition: 400ms;
+}
+
+// this is the circle checker
+.checkbox > input[type=checkbox] + span::after {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-color: blue;
+    border: 2px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    transition: 400ms;
+}
+
+.checkbox > input[type=checkbox]:checked + span::before {
+    background-color: yellow;
+}
+
+
+// this is the circle checker after selected
+.checkbox > input[type=checkbox]:checked + span::after {
+    left: 2.5em;
+    background-color: green;
+    border-color: green;
+}
+
+.checkbox > input {
+    // display: none;
+}
+
