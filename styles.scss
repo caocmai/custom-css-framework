@@ -11,6 +11,7 @@ $background-color: white;
     --form-selected-color: yellow;
     --dark-gray: rgb(124, 120, 120);
     --backgroun-color:  #FFC93C;
+    --light-grey: rgb(214, 207, 207);
 }
 
 body {
@@ -219,8 +220,8 @@ p {
 
 // selector styling
 .checkbox > span {
-    padding: .5em 0 .5em 5.5em;
-    // background-color: blueviolet;
+    padding: .5em 4.5em;
+    background-color: blueviolet;
     align-items: center;
     position: relative;
 }
@@ -229,16 +230,19 @@ p {
 .checkbox > input[type=checkbox] + span::before {
     content: '';
     display: inline-block;
-    border: 2px solid blue;
-    border-radius: 0;
+    border: 2px solid black;
+    border-radius: .2em;
     width: 3.5em;
     height: 1.5em;
-    margin: 0 0.5em 0 0;
     position: absolute;
     left: 0.25em;
     top: 0.25em;
-    background-color: orange;
+    background-color: var(--light-grey);
     transition: 400ms;
+}
+
+.checkbox > input[type=checkbox]:checked + span::before {
+    background-color: var(--backgroun-color);
 }
 
 // this is the circle checker
@@ -247,8 +251,8 @@ p {
     display: block;
     width: 1em;
     height: 1em;
-    background-color: blue;
-    border: 2px solid red;
+    background-color: #206a5d;
+    border: 2px solid #206a5d;
     border-radius: 50%;
     position: absolute;
     left: 0.5em;
@@ -256,16 +260,47 @@ p {
     transition: 400ms;
 }
 
-.checkbox > input[type=checkbox]:checked + span::before {
-    background-color: yellow;
-}
-
-
 // this is the circle checker after selected
 .checkbox > input[type=checkbox]:checked + span::after {
     left: 2.5em;
     background-color: green;
     border-color: green;
+}
+
+.radio > span {
+    padding: .5em 3.5em;
+    // background-color: violet;
+    position: relative;
+}
+
+.radio > input[type=radio] + span::before {
+    content: '';
+    display: inline;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    border: 1px solid grey;
+    left: 0.25em;
+    top: 0.65em;
+}
+
+.radio > input[type=radio]:checked + span::before {
+    background-color: wheat;
+}
+
+.radio > input[type=radio]:checked + span::after {
+    content: '';
+    width: .8em;
+    height: .3em;
+    // background-color: blue;
+    position: absolute;
+    left: 0.35em;
+    bottom: .95em;
+    transform: rotate(-45deg);
+    border-bottom: .2em solid red;
+    border-left: .2em solid red;
+
+
 }
 
 .checkbox > input {
