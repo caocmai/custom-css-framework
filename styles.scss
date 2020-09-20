@@ -8,25 +8,31 @@ $background-color: white;
     #{--bg-color}: $background-color;
     #{--fg-color}: $forground-color;
     #{--font-family}: $font-group;
+    --form-selected-color: yellow;
+    --dark-gray: rgb(124, 120, 120);
+    --backgroun-color:  #FFC93C;
 }
 
 body {
     font-family: var(--font-family);
+    margin: 60px;
 }
 
 
 hr.solid {
-    border-top: 3px solid #bbb;
+    border-top: 2px solid rgb(119, 117, 117);
+    margin-block-start: 0.1em;
 }
 
 nav.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  
 
 }
 nav.navbar{
-    background-color: #FFC93C;
+    background-color: var(--backgroun-color);
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
@@ -72,15 +78,13 @@ nav.navbar{
                 padding: 0 1em;
             }
 
-           
-    
 
 
             a {
 
                 display: block;
                 color: black;
-                padding: 0.25em 1em;
+                padding: 0.3em 1em;
                 text-decoration: none;
                 transition: 300ms;
 
@@ -108,7 +112,14 @@ nav.navbar{
     }
 }
 
+h5, h4 {
+  color: grey
+}
 
+h6 {
+    letter-spacing: 0.15em;
+    color: red;
+}
 
 
 .buttons-section {
@@ -139,11 +150,62 @@ button.btn-dark {
     --fg-color: rgb(51, 48, 48);
 }
 
+input[type=text], 
+input[type=email], 
+input[type=password], 
+textarea {
+  /* Your styles here */
+  padding: 1em;
+  font-size: 0.8em;
+  border: 3px solid var(--dark-gray); /* use a custom property! */
+  border-radius: 0.3em;
+  /* Removing the outline! */
+//   outline: none !important;
+  /* Animate changes */
+  transition: 300ms;
+}
+
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=password]:focus, 
+textarea:focus {
+  /* Your styles here */
+  outline: blue;
+  border-color: var(--backgroun-color); /* Use a custom property! */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: .7em
+}
+
+input[type=submit], button[type=submit] {
+    align-self: flex-end;
+}
+
+input[type=submit] {
+    font-size: 1.5em;
+    padding: 5px 13px;
+}
+
 pre {
     font-size: 10px;
     background-color: beige;
     padding: 10px 10px 0px 0px;
 
+}
+
+section_title {
+    font-size: 1.5em;
+}
+
+p {
+    margin-block-start: 0em;
+    color: rgb(99, 96, 96);
 }
 
 .to-the-end{
