@@ -38,26 +38,32 @@
     </nav>
 
     <br>
-    <section_title>Welcome</section_title>
-    <hr class="solid">
-    <p>Welcome to my custom framework. In order to style your project with this theme add this
-        framework's CSS into your project and link it to your HTML project and assign the tag's class according to this
-        framework.</p>
+    <section>
+        <section_title>Welcome</section_title>
+        <hr class="solid">
+        <p>Welcome to my custom framework. In order to style your project with this theme add this
+            framework's CSS into your project and link it to your HTML project and assign the tag's class according to
+            this
+            framework.</p>
+    </section>
 
-    <section_title>Headings</section_title>
-    <hr class="solid">
-    <p>These are the various headings you can use</p>
+    <section>
+        <section_title>Headings</section_title>
+        <hr class="solid">
+        <p>These are the various headings you can use</p>
 
-    <div>
-        <h1>H1. Heading 1 Title</h1>
-        <h2>H2. Heading 2 Title</h2>
-        <h3>H3. Heading 3 Title</h3>
-        <h4>H4. Heading 4 Title</h4>
-        <h5>H5. Heading 5 Title</h5>
-        <h6>H6. Heading 6 Title</h6>
-    </div>
-    <div>
-        <pre>
+
+
+        <div>
+            <h1>H1. Heading 1 Title</h1>
+            <h2>H2. Heading 2 Title</h2>
+            <h3>H3. Heading 3 Title</h3>
+            <h4>H4. Heading 4 Title</h4>
+            <h5>H5. Heading 5 Title</h5>
+            <h6>H6. Heading 6 Title</h6>
+        </div>
+        <div>
+            <pre>
     &#x3C;h1&#x3E;&#x3C;/h1&#x3E;
     &#x3C;h2&#x3E;&#x3C;/h2&#x3E;
     &#x3C;h3&#x3E;&#x3C;/h3&#x3E;
@@ -65,14 +71,17 @@
     &#x3C;h5&#x3E;&#x3C;/h5&#x3E;
     &#x3C;h6&#x3E;&#x3C;/h6&#x3E;
     </pre>
-    </div>
+        </div>
 
-    <section_title>Nav Bar</section_title>
-    <hr class="solid">
-    <p>The nav bar looks like the nav bar shown above</p>
+    </section>
 
-    <div>
-        <pre>
+    <section>
+        <section_title>Nav Bar</section_title>
+        <hr class="solid">
+        <p>The nav bar looks like the nav bar shown above</p>
+
+        <div>
+            <pre>
     &#x3C;nav class=&#x22;navbar sticky&#x22;&#x3E;
         &#x3C;ul&#x3E;
             &#x3C;li&#x3E;&#x3C;a class=&#x22;title&#x22; heref=&#x22;#&#x22;&#x3E;TITLE&#x3C;/a&#x3E;&#x3C;/li&#x3E;
@@ -100,86 +109,84 @@
         &#x3C;/ul&#x3E;
     &#x3C;/nav&#x3E;
         </pre>
-    </div>
-
-    <section_title>Buttons</section_title>
-    <hr class="solid">
-    <p>These are the various buttons you can use</p>
-
-    <div>
-        <pre>
-    &#x3C;h1&#x3E;&#x3C;/h1&#x3E;
-    &#x3C;h2&#x3E;&#x3C;/h2&#x3E;
-    &#x3C;h3&#x3E;&#x3C;/h3&#x3E;
-    &#x3C;h4&#x3E;&#x3C;/h4&#x3E;
-    &#x3C;h5&#x3E;&#x3C;/h5&#x3E;
-    &#x3C;h6&#x3E;&#x3C;/h6&#x3E;
-    </pre>
-    </div>
-
-    <div class="buttons-section">
-        <div>
-            <button>Success</button>
-            <button class="btn-alert">Alert</button>
-            <button class="btn-dark">Dark</button>
         </div>
+    </section>
+    <section>
+        <section_title>Buttons</section_title>
+        <hr class="solid">
+        <p>These are the various buttons you can use</p>
 
-        <div>
-            <pre>
+        <div class="buttons-section">
+            <div>
+                <button>Success</button>
+                <button class="btn-alert">Alert</button>
+                <button class="btn-dark">Dark</button>
+            </div>
+
+            <div>
+                <pre>
     &lt;button&gt;&lt;button&gt;
     &lt;button class="btn-alert"&gt;&lt;button&gt;
     &lt;button class="btn-dark"&gt;&lt;button&gt;
         </pre>
+            </div>
         </div>
-    </div>
 
-    <section_title> Selectors</section_title>
-    <hr class="solid">
-    <p>These are the various selector styles you can use</p>
+    </section>
 
-    <div class="selectors">
-        <label class="checkbox">
-            <input type="checkbox">
-            <span>Activate?</span>
-        </label>
+    <section>
+        <section_title> Selectors</section_title>
+        <hr class="solid">
+        <p>These are the various selector styles you can use</p>
 
-        <label class="radio">
-            <input type="radio" name="choice">
-            <span>Radio Choice 1</span>
-        </label>
+        <div class="selectors">
+            <label class="checkbox">
+                <input type="checkbox">
+                <span>Activate?</span>
+            </label>
 
-        <label class="radio">
-            <input type="radio" name="choice">
-            <span>Radio Choice 2</span>
-        </label>
+            <label class="radio">
+                <input type="radio" name="choice">
+                <span>Radio Choice 1</span>
+            </label>
 
-    </div>
+            <label class="radio">
+                <input type="radio" name="choice">
+                <span>Radio Choice 2</span>
+            </label>
 
-    <section_title>Forms</section_title>
-    <hr class="solid">
-    <p>These are the forms</p>
+        </div>
 
-    <form>
-        <label>Name</label>
-        <input type="text" placeholder="enter name" />
-        <label>Email</label>
-        <input type="email" placeholder="enter email" />
-        <label>Password</label>
-        <input type="password" placeholder="enter password" />
-        <label>Notes</label>
-        <textarea placeholder="enter notes"></textarea>
-        <input type="submit">
-    </form>
+    </section>
 
-    <div>
-        <pre>
+    <section>
+        <section_title>Forms</section_title>
+        <hr class="solid">
+        <p>These are the forms</p>
+
+        <form>
+            <label>Name</label>
+            <input type="text" placeholder="enter name" />
+            <label>Email</label>
+            <input type="email" placeholder="enter email" />
+            <label>Password</label>
+            <input type="password" placeholder="enter password" />
+            <label>Notes</label>
+            <textarea placeholder="enter notes"></textarea>
+            <input type="submit">
+        </form>
+
+        <div>
+            <pre>
     &#x3C;form&#x3E;
         &#x3C;label&#x3E;Name&#x3C;/label&#x3E;
         &#x3C;input type=&#x22;text&#x22; placeholder=&#x22;enter name&#x22; /&#x3E;
         &#x3C;input type=&#x22;submit&#x22;&#x3E;
     &#x3C;/form&#x3E;        
         </pre>
-    </div>
+        </div>
+
+    </section>
 
     <div class="to-the-end"></div>
 

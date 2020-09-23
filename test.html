@@ -1,201 +1,61 @@
-
- 
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Form Playground</title>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Web Components</h1>
+		<p>This page has a few of the standard components. 
+			These use the shadow DOM to display sub-elements
+			that are not visible in the "light" DOM.
+		</p>
 
+		<p>Follow these steps:</p>
 
-    <style>
-      /* Style form elements */
-      input[type=text], 
-      input[type=email], 
-      input[type=password], 
-      textarea {
-        border: 4px solid #333;
-        padding: 1em;
-        font-size: 1em;
-        border-radius: 25px;
-        /* box-shadow: 1px 1px 6px #000 inset; */
-        outline: none !important;
-        transition: 400ms;
-      }
+		<ol>
+			<li>Open this page in your browser</li>
+			<li>Open the web inspector.</li>
+			<li>Turn on "Show User-Agent Shadow DOM" option.
+				<ul>
+					<li>Chrome: In the inspector go to settings, scroll to Elements and check the box: "Show user agent shadow DOM"</li>
+					<li>Safari: Click the `<>` button in the inspector. (the current version of safari seems to have removed htis option and shows the shadow DOM by default?)</li>
+				</ul>
+			<li>Inpsect each of the elements below. Specifically you're looking at the shadow DOM for that element and what you find there.</li>
+		</ol>
 
-
-      input[type=text]:focus, 
-      input[type=email]:focus, 
-      input[type=password]:focus, 
-      textarea:focus {
-        border-color: tomato;
-      }
-
-
-      input[type=submit] {
-        align-self: flex-end;
-      }
-
-      label {
-        margin: 0.5em;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      /* developers styles */
-      form {
-        width: 400px;
-        margin: auto;
-      }
-
-
-      /* -------------------------------------------------------------------- */
-      /* Check Box */
-
-      /* checkbox button base element */
-      .frmwrk-checkbox > span {
-        /* Padding on the left leaves room for checkbox */
-        padding: 0.5em 0 0.5em 3.5em; 
-        display: flex;
-        align-items: center;
-        /* Relative position allows checkbox elements to positioned absolute */
-        position: relative;
-      }
-
-      /* Create the checkbox checkmark - not selected */
-      .frmwrk-checkbox > input[type=checkbox] + span::after {
-        content: '';
-        display: block;
-        width: 1em;
-        height: 1em;
-        background-color: blue;
-        border: 2px solid red;
-        border-radius: 0;
-        position: absolute;
-        left: 0.5em;
-        top: 0.5em;
-        transition: 400ms;
-      }
-
-      /* Checkmark styles - selected state */
-      .frmwrk-checkbox > input[type=checkbox]:checked + span::after {
-        left: 1.5em;
-        background-color: green;
-        border-color: green;
-      }
-
-      /* Checkbox "box" */
-      .frmwrk-checkbox > input[type=checkbox] + span::before {
-        content: '';
-        display: inline-block;
-        border: 2px solid blue;
-        border-radius: 0;
-        width: 2.5em;
-        height: 1.5em;
-        margin: 0 0.5em 0 0;
-        position: absolute;
-        left: 0.25em;
-        top: 0.25em;
-        background-color: orange;
-      }
-
-      /* Hide the input! */
-      .frmwrk-checkbox input {
-        display: none;
-      }
-
-
-      /* -------------------------------------------------------------------- */
-      /* Radio Buttons */
-
-      /* Radio button base element */
-      .frmwrk-radio > span {
-        padding: 0.5em 0 0.5em 2.5em;
-        display: flex;
-        align-items: center;
-        position: relative;
-      }
-
-      /* Selected "dot" styles */
-      .frmwrk-radio > input[type=radio]:checked + span::before {
-        content: '';
-        display: block;
-        width: 0.5em;
-        height: 0.5em;
-        background-color: red;
-        border: 2px solid;
-        border-radius: 50%;
-        position: absolute;
-        left: 0.75em;
-        top: 0.75em;
-      }
-
-      /* Dot outline */
-      .frmwrk-radio > input[type=radio] + span::after {
-        content: '';
-        display: inline-block;
-        border: 2px solid;
-        border-radius: 50%;
-        width: 1.5em;
-        height: 1.5em;
-        margin: 0 0.5em 0 0;
-        position: absolute;
-        left: 0.25em;
-        top: 0.25em;
-      }
-
-      .frmwrk-radio input {
-        display: none;
-      }
-
-    </style>
-  </head>
-  <body>
-    <h1>Forms</h1>
-    <form>
-      <label>Name</label>
-      <input type="text" placeholder="enter name" />
-      <label>email</label>
-      <input type="email" placeholder="enter email" />
-      <label>password</label>
-      <input type="password" placeholder="enter password" />
-      <label>Notes</label>
-      <textarea placeholder="enter notes"></textarea>
-      
-      <label class="frmwrk-checkbox">
-        <input type="checkbox">
-        <span>Pickles?</span>
-      </label>
-
-      <label class="frmwrk-radio">
-        <input type="radio" name="choice" checked>
-        <span>Converse</span>
-      </label>
-
-      <label class="frmwrk-radio">
-        <input type="radio" name="choice">
-        <span>Vans</span>
-      </label>
-
-      <label class="frmwrk-radio">
-        <input type="radio" name="choice">
-        <span>Nike</span>
+		<form>
+			<label>
+				Text Label
+				<input type="text">
+			</label>
+			<label>
+				Text Label
+				<input type="number">
+			</label>
+			<label>
+				Text Label
+				<input type="range">
+			</label>
+			<label>
+				Text Label
+				<input type="color">
+			</label>
+			<label>
+				Text Label
+				<input type="datetime">
       </label>
       
-      <input type="submit">
+      <label>
+				search
+				<input type="month">
+      </label>
+      
+
     </form>
-  </body>
+    <audio controls>
+      <source src="bitdegree.org/learn/I_Cactus_-_05_-_ruby_cactus.mp3" type="audio/mpeg"">
+      <p>If audio does not start, the <audio> HTML element is not supported in your browser.</p>
+      </audio>
+
+	</body>
 </html>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

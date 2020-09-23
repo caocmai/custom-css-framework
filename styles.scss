@@ -117,14 +117,13 @@ h5, h4 {
   color: grey
 }
 
+h2 {
+    font-size: 1.3em;
+}
+
 h6 {
     letter-spacing: 0.15em;
     color: red;
-}
-
-
-.buttons-section {
-    padding: 20px 0px ;
 }
 
 
@@ -181,7 +180,8 @@ form {
 }
 
 label {
-    margin: .7em
+    margin: 0.8em 0.3em;
+    // padding-top: 0.3em;
 }
 
 input[type=submit], button[type=submit] {
@@ -202,6 +202,12 @@ pre {
 
 section_title {
     font-size: 1.5em;
+    letter-spacing: .06em;
+
+}
+
+section {
+    margin-bottom: 3em;
 }
 
 p {
@@ -221,7 +227,7 @@ p {
 // selector styling
 .checkbox > span {
     padding: .5em 4.5em;
-    background-color: blueviolet;
+    // background-color: blueviolet;
     align-items: center;
     position: relative;
 }
@@ -304,6 +310,9 @@ p {
 }
 
 .checkbox > input {
-    // display: none;
+    display: none;
 }
 
+.radio > input {
+    display: none;
+}
