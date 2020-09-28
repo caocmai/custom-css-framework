@@ -164,7 +164,7 @@ input[type=submit] {
 }
 
 pre {
-  font-size: 10px;
+  font-size: 14px;
   background-color: beige;
   padding: 10px 10px 0px 0px;
 }
@@ -201,7 +201,7 @@ p {
 .checkbox > input[type=checkbox] + span::before {
   content: "";
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid #302a2a;
   border-radius: 0.2em;
   width: 3.5em;
   height: 1.5em;
@@ -221,8 +221,8 @@ p {
   display: block;
   width: 1em;
   height: 1em;
-  background-color: #206a5d;
-  border: 2px solid #206a5d;
+  background-color: #8f8c8c;
+  border: 2px solid #8f8c8c;
   border-radius: 50%;
   position: absolute;
   left: 0.5em;
@@ -243,11 +243,12 @@ p {
 
 .radio > input[type=radio] + span::before {
   content: "";
-  display: inline;
+  display: inline-block;
   width: 1em;
   height: 1em;
   position: absolute;
   border: 1px solid grey;
+  border-radius: 50%;
   left: 0.25em;
   top: 0.65em;
 }
@@ -257,6 +258,45 @@ p {
 }
 
 .radio > input[type=radio]:checked + span::after {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  background-color: red;
+  position: absolute;
+  left: 0.5em;
+  bottom: 0.75em;
+  border-radius: 50%;
+}
+
+.checkbox-check {
+  width: 250px;
+}
+
+.radio {
+  width: 250px;
+}
+
+.checkbox-check > span {
+  padding: 0.5em 3.5em;
+  position: relative;
+}
+
+.checkbox-check > input[type=checkbox] + span::before {
+  content: "";
+  display: inline;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  border: 1px solid grey;
+  left: 0.25em;
+  top: 0.65em;
+}
+
+.checkbox-check > input[type=checkbox]:checked + span::before {
+  background-color: wheat;
+}
+
+.checkbox-check > input[type=checkbox]:checked + span::after {
   content: "";
   width: 0.8em;
   height: 0.3em;
@@ -272,8 +312,16 @@ p {
   display: none;
 }
 
+.checkbox-check > input {
+  display: none;
+}
+
 .radio > input {
   display: none;
+}
+
+textarea {
+  font-family: var(--font-family);
 }
 
 /*# sourceMappingURL=styles.css.map */
