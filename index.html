@@ -52,6 +52,22 @@
             framework.</p>
     </section>
 
+    <!-- customcounter -->
+    <section>
+
+        <custom-counter></custom-counter>
+
+    </section>
+
+    <script src="./custom-counter.js"></script>
+    <script>
+        document.querySelector('custom-counter').addEventListener('change', (e) => {
+            console.log('custom counter changed')
+            console.log(e.target._value)
+    })
+    </script>
+
+
     <section>
         <section_title>Headings</section_title>
         <hr class="solid">

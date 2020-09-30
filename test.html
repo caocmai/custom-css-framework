@@ -1,61 +1,97 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<h1>Web Components</h1>
-		<p>This page has a few of the standard components. 
-			These use the shadow DOM to display sub-elements
-			that are not visible in the "light" DOM.
-		</p>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
 
-		<p>Follow these steps:</p>
+	<style>
+		.container {
+				  margin: 30px;
+				  display: flex;
+			  }
+  
+			  .button {
+				  padding: .5em 1em;
+				  background-color: #FFC93C;
+				  display: flex;
+				  /* justify-content: center; */
+				  align-items: center;
+				  border-top: 2px solid;
+				  border-bottom: 2px solid;
+			  }
+  
+			  .down {
+				  border-top-left-radius: 0.5em;
+				  border-bottom-left-radius: 0.5em;
+				  border-left: 2px solid;
+			  }
+  
+			  .up {
+				  border-top-right-radius: 0.5em;
+				  border-bottom-right-radius: 0.5em;
+				  border-right: 2px solid;
+			  }
+  
+			  .arrow {
+				  width: 8px;
+				  height: 8px;
+				  border-top: 3px solid;
+				  border-right: 3px solid;
+				  /* transition: 400ms; */
 
-		<ol>
-			<li>Open this page in your browser</li>
-			<li>Open the web inspector.</li>
-			<li>Turn on "Show User-Agent Shadow DOM" option.
-				<ul>
-					<li>Chrome: In the inspector go to settings, scroll to Elements and check the box: "Show user agent shadow DOM"</li>
-					<li>Safari: Click the `<>` button in the inspector. (the current version of safari seems to have removed htis option and shows the shadow DOM by default?)</li>
-				</ul>
-			<li>Inpsect each of the elements below. Specifically you're looking at the shadow DOM for that element and what you find there.</li>
-		</ol>
+			  }
+  
+			  .down > .arrow {
+				  transform: translate(0px, -1px) rotate(135deg);
+				  transition: 300ms;
+			  }
+  
+			  .up > .arrow {
+				  transform: translate(0px, 3px) rotate(-45deg);
+				  transition: 300ms;
+			  }
+  
+			  .display_count {
+				  padding: .5em 1em;
+				  width: 2em;
+				  border-top: 2px solid;
+				  border-bottom: 2px solid;
+				  border-right: 2px solid;
+				  outline: none;
+				  text-align: center;
+			  }
 
-		<form>
-			<label>
-				Text Label
-				<input type="text">
-			</label>
-			<label>
-				Text Label
-				<input type="number">
-			</label>
-			<label>
-				Text Label
-				<input type="range">
-			</label>
-			<label>
-				Text Label
-				<input type="color">
-			</label>
-			<label>
-				Text Label
-				<input type="datetime">
-      </label>
-      
-      <label>
-				search
-				<input type="month">
-      </label>
-      
+			  .button:hover {
+				background-color: rgb(181, 181, 202);
+			  }
 
-    </form>
-    <audio controls>
-      <source src="bitdegree.org/learn/I_Cactus_-_05_-_ruby_cactus.mp3" type="audio/mpeg"">
-      <p>If audio does not start, the <audio> HTML element is not supported in your browser.</p>
-      </audio>
+			  .button.up:hover > .arrow{
+				  border-color: red;
+				  transform: translate(0px, 1px) rotate(-45deg);
+			  }
 
-	</body>
+			  .button.down:hover > .arrow {
+				transform: translate(0px, 0px) rotate(135deg);
+				border-color: red;
+
+			  }
+
+			  
+	  </style>
+	  <div class="container">
+			  <div class="button down">
+				  <div class="arrow"></div>
+			  </div>
+  
+			  <input class="display_count" value="0">
+  
+			  <div class="button up">
+				  <div class="arrow"></div>
+			  </div>
+	  </div>
+	
+</body>
 </html>
