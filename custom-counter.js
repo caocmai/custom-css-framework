@@ -3,7 +3,7 @@ const template = document.createElement('template')
 template.innerHTML = `
 <style>
 .container {
-          margin: 30px;
+          margin: 5px;
           display: flex;
       }
 
@@ -73,6 +73,10 @@ template.innerHTML = `
 
       }
 
+      input {
+          font-family: 'Didact Gothic', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+
 </style>
 
 <div class="container">
@@ -94,7 +98,7 @@ class CustomCounter extends HTMLElement {
         super();
 
         const tempHTML = template.content.cloneNode(true)
-        this._shadowRoot = this.attachShadow( { mode: 'open' });
+        this._shadowRoot = this.attachShadow({ mode: 'open' });
         this._shadowRoot.appendChild(tempHTML)
 
         this._downButton = this._shadowRoot.querySelector('.down')
@@ -106,23 +110,68 @@ class CustomCounter extends HTMLElement {
         this._min = 0
         this._max = 10
 
+        this._update()
+
+        this._increment = this._increment.bind(this)
+        this._decrement = this._decrement.bind(this)
+
     }
 
+    _increment(e) {
+        console.log("increment event and this", e, this)
 
-    _update() {
-        this._displyCounter.innerHTML = this._value
-        // Creating a new event
-        this.dispatchEvent(new Event('change')) 
-    }
-
-    _increment() {
         const incrementValue = this._value + this._step
 
         if (incrementValue <= this._max) {
             this._value = incrementValue
         }
-        this._update
+
+        this._update()
     }
+
+    _decrement(e) {
+        console.log("decrement event and this", e, this)
+        const decrementValue = this._value - this._step
+        if (decrementValue >= this._min) {
+            this._value = decrementValue
+        }
+
+        this._update()
+    }
+
+    _update() {
+        this._displyCounter.value = this._value
+        // Creating a new event
+        this.dispatchEvent(new Event('change'))
+    }
+
+    static get observedAttributes() {
+        return ['value', 'min', 'max', 'step'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'value') {
+            this._value = parseInt(newValue)
+            this._update()
+        } else if (name === 'min') {
+            this._min = parseInt(newValue)
+        } else if (name === 'max') {
+            this._max = parseInt(newValue)
+        } else if (name === 'step') {
+            this._step = parseInt(newValue)
+        }
+    }
+
+    connectedCallback() {
+        this._upButton.addEventListener('click', this._increment) // add click event to up button
+        this._downButton.addEventListener('click', this._decrement) // add click even to down button
+    }
+
+    // disconnectedCallback() {
+    //     this._upButton.removeEventListener('click', this._increment)
+    //     this._downButton.removeEventListener('click', this._decrement)
+    // }
+
 }
 
 customElements.define('custom-counter', CustomCounter);

@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  padding: 10px 60px;
+  padding: 8px 60px;
 }
 
 hr.solid {
@@ -189,7 +189,7 @@ p {
 }
 
 .to-the-end {
-  height: 1600px;
+  height: 300px;
 }
 
 .selectors > label {
