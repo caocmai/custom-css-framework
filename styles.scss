@@ -374,3 +374,25 @@ textarea {
     font-family: var(--font-family);
     font-size: 13.5px;
 }
+
+.footer {
+    // position: fixed;
+    display: flex;
+	flex-direction: row;
+    align-items: baseline;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #528317;
+   
+    ul {
+        display: flex;
+        list-style-type: none;
+        align-items: baseline;
+        padding-inline-start: 0px;
+        color: white;
+
+
+    }
+  }

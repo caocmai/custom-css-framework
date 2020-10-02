@@ -330,4 +330,22 @@ textarea {
   font-size: 13.5px;
 }
 
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #528317;
+}
+.footer ul {
+  display: flex;
+  list-style-type: none;
+  align-items: baseline;
+  padding-inline-start: 0px;
+  color: white;
+}
+
 /*# sourceMappingURL=styles.css.map */

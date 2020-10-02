@@ -84,7 +84,7 @@ template.innerHTML = `
           <div class="arrow"></div>
       </div>
 
-      <input class="display_count" value="0">
+      <input class="display_count" value="0" name="display_input">
 
       <div class="button up">
           <div class="arrow"></div>
@@ -104,7 +104,9 @@ class CustomCounter extends HTMLElement {
         this._downButton = this._shadowRoot.querySelector('.down')
         this._upButton = this._shadowRoot.querySelector('.up')
         this._displyCounter = this._shadowRoot.querySelector('.display_count')
+        this._displayInput = this._shadowRoot.querySelector('[name="display_input"]')
 
+        console.log("input vakue", this._displayInput)
         this._value = 0
         this._step = 1
         this._min = 0
@@ -114,29 +116,55 @@ class CustomCounter extends HTMLElement {
 
         this._increment = this._increment.bind(this)
         this._decrement = this._decrement.bind(this)
+        this._resetUserInputDisplay = this._resetUserInputDisplay.bind(this)
+        this._showUserInputValue = this._showUserInputValue.bind(this)
 
     }
 
     _increment(e) {
         console.log("increment event and this", e, this)
 
-        const incrementValue = this._value + this._step
-
+        const incrementValue = parseInt(this._value) + this._step
+        console.log(incrementValue, this._max, this._value)
         if (incrementValue <= this._max) {
             this._value = incrementValue
+            console.log("after incrementing", this._value)
         }
-
         this._update()
     }
 
     _decrement(e) {
         console.log("decrement event and this", e, this)
+        
         const decrementValue = this._value - this._step
+        console.log(decrementValue, this._min)
+
         if (decrementValue >= this._min) {
             this._value = decrementValue
         }
 
         this._update()
+    }
+
+    _showUserInputValue(e) {
+        console.log("change displyinput and this", this)
+        if (e.key === 'Enter') {
+            // code for enter
+            console.log("pressed enter")
+            this._value = this._displayInput.value
+
+            if (this._value >= this._max) {
+                this._resetUserInputDisplay()
+            }
+            this._update()
+          }
+        
+    }
+
+    _resetUserInputDisplay(e) {
+        this._value = ""
+        this._update()
+
     }
 
     _update() {
@@ -165,6 +193,9 @@ class CustomCounter extends HTMLElement {
     connectedCallback() {
         this._upButton.addEventListener('click', this._increment) // add click event to up button
         this._downButton.addEventListener('click', this._decrement) // add click even to down button
+        this._displayInput.addEventListener('keypress', this._showUserInputValue)
+        this._displayInput.addEventListener('click', this._resetUserInputDisplay)
+
     }
 
     // disconnectedCallback() {
